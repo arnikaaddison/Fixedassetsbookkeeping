@@ -29,7 +29,7 @@
       <a href="get-started.html">Get Started</a>
     </nav>
     <div class="nav-cta">
-      <a href="#" class="btn btn-primary">Book a Consultation</a>
+      <a href="contact.html" class="btn btn-primary">Book a Consultation</a>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -164,5 +164,21 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+  // Prefill the service dropdown when arriving via ?service=... from another page's CTA
+  document.addEventListener('DOMContentLoaded', function () {
+    var params = new URLSearchParams(window.location.search);
+    var wanted = params.get('service');
+    if (!wanted) return;
+    var select = document.getElementById('service');
+    if (!select) return;
+    for (var i = 0; i < select.options.length; i++) {
+      if (select.options[i].value.toLowerCase() === wanted.toLowerCase()) {
+        select.selectedIndex = i;
+        break;
+      }
+    }
+  });
+</script>
 </body>
 </html>
