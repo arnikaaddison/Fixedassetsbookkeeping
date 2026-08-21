@@ -246,8 +246,8 @@ section{ padding:96px 0; }
 .section-head h2{ font-size:clamp(28px,3.4vw,40px); }
 
 /* ===== Service cards ===== */
-.grid-services{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
-.service-card{ background:var(--paper); padding:34px 28px; }
+.grid-services{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+.service-card{ background:var(--paper); padding:34px 28px; border:1px solid var(--line); border-radius:4px; }
 .service-card .code{ font-family:var(--font-mono); font-size:11.5px; color:var(--gold-dark); letter-spacing:.08em; margin-bottom:16px; display:block; }
 .service-card h3{ font-size:20px; margin-bottom:10px; }
 .service-card p{ font-size:14.5px; margin-bottom:16px; }
