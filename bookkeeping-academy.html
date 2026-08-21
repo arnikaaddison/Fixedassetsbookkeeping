@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bookkeeping Academy | Fixed Assets Bookkeeping & Tax Solutions</title>
+<meta name="description" content="Learn the skill. Understand the numbers. Build the income. Practical bookkeeping education from beginner to advanced professional level.">
+<link rel="stylesheet" href="styles.css">
+<script src="site-config.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">FAB</span>
+      <span class="brand-text">
+        <span class="b1">Fixed Assets Bookkeeping</span>
+        <span class="b2">&amp; Tax Solutions</span>
+      </span>
+    </a>
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html">Home</a>
+      <a href="bookkeeping.html">Bookkeeping</a>
+      <a href="tax-services.html">Tax Services</a>
+      <a href="bookkeeping-academy.html" class="active">Academy</a>
+      <a href="about.html">About</a>
+      <a href="resources.html">Resources</a>
+      <a href="get-started.html">Get Started</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#" class="btn btn-primary">Book a Consultation</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Bookkeeping Academy</div>
+    <span class="eyebrow">FAB Bookkeeping Academy</span>
+    <h1>Learn the skill. Understand the numbers. Build the income.</h1>
+    <p>Practical bookkeeping education for aspiring bookkeepers, tax professionals wanting year-round income, virtual assistants, and business owners who want to understand their own books.</p>
+  </div>
+</section>
+
+<section class="section-paper">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Who this is for</span>
+      <h2>Built for real people building a real skill.</h2>
+    </div>
+    <div class="value-list reveal">
+      <div class="value-item"><h3>Aspiring bookkeepers</h3><p>Start from zero and build a practical, marketable skill.</p></div>
+      <div class="value-item"><h3>Tax professionals</h3><p>Add year-round bookkeeping income alongside seasonal tax work.</p></div>
+      <div class="value-item"><h3>Virtual assistants</h3><p>Offer bookkeeping as a higher-value service to existing clients.</p></div>
+      <div class="value-item"><h3>Business owners</h3><p>Understand your own numbers well enough to run your business with confidence.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Course levels</span>
+      <h2>Start where you are. Grow from there.</h2>
+    </div>
+    <div id="course-grid" class="grid-services reveal">
+      <!-- Course cards are rendered from site-config.js so pricing/links can be updated in one place -->
+      <noscript>Enable JavaScript to view course listings, or edit site-config.js directly.</noscript>
+    </div>
+  </div>
+</section>
+
+<section class="section-paper">
+  <div class="container">
+    <div class="lead-band reveal">
+      <div>
+        <h3>Could Bookkeeping Become Your Next Income Stream?</h3>
+        <p>Get email updates on new courses, cohorts, and bookkeeping career tips.</p>
+      </div>
+      <form class="lead-form" onsubmit="event.preventDefault(); alert('This form needs to be connected to an email marketing provider before it can collect real signups.');">
+        <input type="email" placeholder="Email address" required>
+        <button type="submit" class="btn btn-primary">Keep Me Posted</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section-ink">
+  <div class="container">
+    <div class="cta-band reveal">
+      <div>
+        <h2>Not sure which level fits you?</h2>
+        <p>Reach out and we'll help you find the right starting point.</p>
+      </div>
+      <a href="get-started.html" class="btn btn-primary">Get Started</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Fixed Assets Bookkeeping &amp; Tax Solutions</h4>
+        <p>Helping business owners gain clarity in their numbers and helping future bookkeepers learn the skills to do the same.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="bookkeeping.html">Bookkeeping</a>
+        <a href="tax-services.html">Tax Services</a>
+        <a href="bookkeeping-academy.html">Bookkeeping Academy</a>
+        <a href="about.html">About</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+12056237572">205-623-7572</a>
+        <a href="mailto:info@fixedassetsbookkeeping.com">info@fixedassetsbookkeeping.com</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+        <a href="#">Disclaimer</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Fixed Assets Bookkeeping &amp; Tax Solutions. All rights reserved.</span>
+      <span>Montevallo, Alabama</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // Render course cards from FAB_CONFIG.courses (site-config.js)
+  document.addEventListener('DOMContentLoaded', function () {
+    var grid = document.getElementById('course-grid');
+    if (!grid || typeof FAB_CONFIG === 'undefined') return;
+    grid.innerHTML = FAB_CONFIG.courses.map(function (c) {
+      var priceHtml = c.price ? '<div style="font-family:var(--font-mono); font-size:13px; color:var(--gold-dark); margin-bottom:8px;">' + c.price + '</div>' : '<div style="font-family:var(--font-mono); font-size:12px; color:var(--text-muted); margin-bottom:8px;">Price coming soon</div>';
+      return '<div class="service-card">' +
+        '<span class="code">Academy</span>' +
+        '<h3>' + c.title + '</h3>' +
+        '<p>' + c.description + '</p>' +
+        priceHtml +
+        '<div style="display:flex; gap:8px; flex-wrap:wrap;">' +
+        '<a href="#" class="btn btn-ghost" style="font-size:12px; padding:8px 14px;">Learn More</a>' +
+        '<a href="' + c.buyLink + '" class="btn btn-primary" style="font-size:12px; padding:8px 14px;">Buy Now</a>' +
+        '</div></div>';
+    }).join('');
+  });
+</script>
+</body>
+</html>
