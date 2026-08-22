@@ -433,6 +433,19 @@ section{ padding:96px 0; }
 .lead-form input{ min-width:200px; }
 
 
+/* ===== Article body (resource pages) ===== */
+.article-body{ font-size:16.5px; }
+.article-body p{ color:var(--text); font-size:16.5px; line-height:1.75; margin-bottom:1.3em; }
+.article-body h2{ font-size:26px; margin-top:1.8em; margin-bottom:.6em; color:var(--ink); }
+.article-body h3{ font-size:19px; margin-top:1.5em; margin-bottom:.5em; color:var(--ink); }
+.article-body strong{ color:var(--text); }
+.article-body ul, .article-body ol{ margin:0 0 1.3em; padding-left:1.4em; color:var(--text); }
+.article-body li{ margin-bottom:.4em; line-height:1.7; }
+.article-body em{ color:var(--text-muted); font-size:14px; display:block; margin-top:2em; border-top:1px solid var(--line); padding-top:16px; }
+
+.resource-card{ display:block; text-decoration:none; color:inherit; transition:transform .15s ease, box-shadow .15s ease; cursor:pointer; }
+.resource-card:hover{ transform:translateY(-3px); box-shadow:0 20px 40px -24px rgba(59,49,80,.35); border-color:var(--gold); }
+
 .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start; }
 @media (max-width:900px){ .contact-grid{ grid-template-columns:1fr; } }
 .contact-detail{ display:flex; gap:16px; padding:18px 0; border-bottom:1px solid var(--line); }
