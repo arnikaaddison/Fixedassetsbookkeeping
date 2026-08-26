@@ -446,6 +446,30 @@ section{ padding:96px 0; }
 .resource-card{ display:block; text-decoration:none; color:inherit; transition:transform .15s ease, box-shadow .15s ease; cursor:pointer; }
 .resource-card:hover{ transform:translateY(-3px); box-shadow:0 20px 40px -24px rgba(59,49,80,.35); border-color:var(--gold); }
 
+/* ===== Compensation table (Partner page) ===== */
+.comp-table{ width:100%; border-collapse:collapse; background:var(--paper); border:1px solid var(--line); border-radius:6px; overflow:hidden; }
+.comp-table th{ background:var(--ink); color:var(--text-on-ink); font-family:var(--font-mono); font-size:12.5px; letter-spacing:.04em; text-transform:uppercase; text-align:left; padding:16px 20px; }
+.comp-table td{ padding:16px 20px; border-top:1px solid var(--line); font-size:15.5px; }
+.comp-table tr td:first-child{ font-family:var(--font-mono); color:var(--text); }
+.comp-table tr td:last-child{ font-family:var(--font-display); font-weight:600; font-size:19px; color:var(--ledger-green-dark); }
+
+/* ===== Refer -> Bookkeep -> Earn flow (Partner page) ===== */
+.flow-steps{ display:grid; grid-template-columns:1fr auto 1fr auto 1fr; gap:18px; align-items:center; }
+.flow-step{ background:var(--paper); border:1px solid var(--line); border-radius:6px; padding:28px 22px; text-align:center; }
+.flow-step .flow-num{ font-family:var(--font-mono); font-size:11.5px; color:var(--gold-dark); letter-spacing:.1em; display:block; margin-bottom:10px; }
+.flow-step h3{ font-size:19px; margin-bottom:8px; }
+.flow-step p{ font-size:14px; margin:0; }
+.flow-arrow{ font-size:22px; color:var(--gold); font-family:var(--font-display); }
+@media (max-width:900px){
+  .flow-steps{ grid-template-columns:1fr; }
+  .flow-arrow{ transform:rotate(90deg); justify-self:center; }
+}
+
+/* ===== Trust standard list (Partner page) ===== */
+.trust-standards{ display:flex; flex-wrap:wrap; gap:12px 28px; font-family:var(--font-mono); font-size:14px; color:var(--text-on-ink); }
+.trust-standards span::before{ content:"◆ "; color:var(--gold); }
+
+
 .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start; }
 @media (max-width:900px){ .contact-grid{ grid-template-columns:1fr; } }
 .contact-detail{ display:flex; gap:16px; padding:18px 0; border-bottom:1px solid var(--line); }
