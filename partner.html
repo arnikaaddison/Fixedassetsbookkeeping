@@ -187,17 +187,23 @@
 
 <!-- ===================== ALREADY A PARTNER ===================== -->
 <section class="section-paper">
-  <div class="container" style="max-width:820px;">
-    <div class="section-head reveal">
+  <div class="container" style="max-width:820px; text-align:center;">
+    <div class="section-head reveal" style="margin:0 auto;">
       <span class="eyebrow">Already a FAB Partner?</span>
       <h2>Submit a Referral</h2>
-      <p>If you've completed onboarding and have your FAB Partner ID, use the form below to refer a client.</p>
+      <p>If you've completed onboarding and have your FAB Partner ID, click below to refer a client.</p>
     </div>
-    <div class="reveal" style="border:1px solid var(--line); border-radius:6px; overflow:hidden; background:var(--paper-2); padding:4px;">
-      <script type="text/javascript" src="https://www.jotform.com/jsform/262377083025052"></script>
-    </div>
+    <button type="button" class="btn btn-primary" onclick="document.getElementById('referral-modal').classList.add('open')">Submit a Referral</button>
   </div>
 </section>
+
+<!-- Referral form modal -->
+<div class="modal-overlay" id="referral-modal" onclick="if(event.target===this) this.classList.remove('open')">
+  <div class="modal-panel">
+    <button type="button" class="modal-close" aria-label="Close" onclick="document.getElementById('referral-modal').classList.remove('open')">&times;</button>
+    <script type="text/javascript" src="https://www.jotform.com/jsform/262377083025052"></script>
+  </div>
+</div>
 
 <!-- ===================== FINAL CTA ===================== -->
 <section class="section-alt">

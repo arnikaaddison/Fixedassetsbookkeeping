@@ -446,6 +446,28 @@ section{ padding:96px 0; }
 .resource-card{ display:block; text-decoration:none; color:inherit; transition:transform .15s ease, box-shadow .15s ease; cursor:pointer; }
 .resource-card:hover{ transform:translateY(-3px); box-shadow:0 20px 40px -24px rgba(59,49,80,.35); border-color:var(--gold); }
 
+/* ===== Modal popup (referral form, etc.) ===== */
+.modal-overlay{
+  display:none; position:fixed; inset:0; z-index:500;
+  background:rgba(36,27,51,0.55);
+  align-items:flex-start; justify-content:center;
+  padding:5vh 20px; overflow-y:auto;
+}
+.modal-overlay.open{ display:flex; }
+.modal-panel{
+  background:var(--paper); border-radius:8px; max-width:760px; width:100%;
+  position:relative; box-shadow:0 40px 80px -20px rgba(0,0,0,.5);
+  padding:8px;
+}
+.modal-close{
+  position:absolute; top:-14px; right:-14px; width:36px; height:36px; border-radius:50%;
+  background:var(--ink); color:#fff; border:2px solid var(--paper);
+  font-size:18px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center;
+  z-index:2;
+}
+.modal-close:hover{ background:var(--gold); }
+
+
 /* ===== Compensation table (Partner page) ===== */
 .comp-table{ width:100%; border-collapse:collapse; background:var(--paper); border:1px solid var(--line); border-radius:6px; overflow:hidden; }
 .comp-table th{ background:var(--ink); color:var(--text-on-ink); font-family:var(--font-mono); font-size:12.5px; letter-spacing:.04em; text-transform:uppercase; text-align:left; padding:16px 20px; }
