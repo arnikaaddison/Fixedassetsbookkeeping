@@ -65,10 +65,18 @@
       <span class="eyebrow">Course levels</span>
       <h2>Start where you are. Grow from there.</h2>
     </div>
-    <div id="course-grid" class="grid-services reveal">
-      <!-- Course cards are rendered from site-config.js so pricing/links can be updated in one place -->
+    <div id="course-grid" class="course-list reveal">
+      <!-- Course cards are rendered from site-config.js so curriculum/links can be updated in one place -->
       <noscript>Enable JavaScript to view course listings, or edit site-config.js directly.</noscript>
     </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container" style="max-width:820px;">
+    <p style="font-family:var(--font-mono); font-size:12.5px; color:var(--text-muted); text-align:center;">
+      Enrollment and checkout for all courses is handled through The Addison Collective. You'll be taken there to complete your purchase.
+    </p>
   </div>
 </section>
 
@@ -123,9 +131,9 @@
       </div>
       <div>
         <h4>Legal</h4>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms</a>
-        <a href="#">Disclaimer</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+        <a href="disclaimer.html">Disclaimer</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -141,17 +149,25 @@
   document.addEventListener('DOMContentLoaded', function () {
     var grid = document.getElementById('course-grid');
     if (!grid || typeof FAB_CONFIG === 'undefined') return;
-    grid.innerHTML = FAB_CONFIG.courses.map(function (c) {
-      var priceHtml = c.price ? '<div style="font-family:var(--font-mono); font-size:13px; color:var(--gold-dark); margin-bottom:8px;">' + c.price + '</div>' : '<div style="font-family:var(--font-mono); font-size:12px; color:var(--text-muted); margin-bottom:8px;">Price coming soon</div>';
-      return '<div class="service-card">' +
-        '<span class="code">Academy</span>' +
-        '<h3>' + c.title + '</h3>' +
-        '<p>' + c.description + '</p>' +
-        priceHtml +
-        '<div style="display:flex; gap:8px; flex-wrap:wrap;">' +
-        '<a href="contact.html?service=Bookkeeping%20Training" class="btn btn-ghost" style="font-size:12px; padding:8px 14px;">Learn More</a>' +
-        '<a href="' + c.buyLink + '" class="btn btn-primary" style="font-size:12px; padding:8px 14px;">Buy Now</a>' +
-        '</div></div>';
+    grid.innerHTML = FAB_CONFIG.courses.map(function (c, i) {
+      var priceHtml = c.price
+        ? '<div class="course-card__price">' + c.price + '</div>'
+        : '<div class="course-card__price" style="color:var(--text-muted);">Price coming soon</div>';
+      var modulesHtml = (c.modules || []).map(function (m) { return '<li>' + m + '</li>'; }).join('');
+      return '<div class="course-card">' +
+        '<div class="course-card__head">' +
+          '<span class="code">Academy · Level ' + (i + 1) + '</span>' +
+          '<h3>' + c.title + '</h3>' +
+          '<p class="tagline">' + (c.tagline || '') + '</p>' +
+          '<p class="who"><strong>Who it\'s for:</strong> ' + (c.whoFor || '') + '</p>' +
+          priceHtml +
+          '<div style="display:flex; gap:8px; flex-wrap:wrap;">' +
+            '<a href="contact.html?service=Bookkeeping%20Training" class="btn btn-ghost" style="font-size:12px; padding:8px 14px;">Ask a Question</a>' +
+            '<a href="' + c.buyLink + '" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:12px; padding:8px 14px;">Enroll via The Addison Collective</a>' +
+          '</div>' +
+        '</div>' +
+        '<div><ul>' + modulesHtml + '</ul></div>' +
+      '</div>';
     }).join('');
   });
 </script>
